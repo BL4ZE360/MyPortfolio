@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Starter Website</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body onload="quickTransition()">
+    <div id="mySidenav" class="sidenav">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <div id="leftCol">
+        <div class="iconContainer" onclick="iconTransition(this)" onmouseenter="iconHover(this)" onmouseleave="iconHover(this)">
+            <div class="bar1" id="bar1"></div>
+            <div class="gap"></div>
+            <div class="bar2"></div>
+            <div class="gap"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+    <div id="main" class="main" onscroll="moveBackground()">
+        <div id="background"></div>
+        <div id="text" class="text">
+            <div id="content" class="content">
+                <h1 id="top">This is my base title</h1>
+                <h2>This is my secondary title</h2>
+                <p>
+                    Lego Star Wars is a Lego theme that incorporates the Star Wars saga and franchise. Originally it was only licensed from 1999 to 2008, but The Lego Group extended the license with Lucasfilm, first until 2011, then until 2016,then again until 2022.[2] The brand has spawned an eponymous video game series containing six video games, developed by Traveller's Tales: Lego Star Wars: The Video Game (2005), Lego Star Wars II: The Original Trilogy (2006), Lego Star Wars: The Complete Saga (2007), Lego Star Wars III: The Clone Wars (2011), Lego Star Wars: The Force Awakens (2016) and Lego Star Wars: The Skywalker Saga (2022). Many short films and miniseries have also been produced.
+                    Here is a <a href="cities.html">list</a> of cities where you can find us.
+                </p>
+
+                <img src="images/background.png" />
+                <p></p>
+                <video controls>
+                    <source src="videos/transcriber.mp4" type="video/mp4">
+                </video>
+                <img src="images/background.png" />
+                <p></p>
+                <video controls>
+                    <source src="videos/transcriber.mp4" type="video/mp4">
+                </video>
+                <img src="images/background.png" />
+                <p></p>
+                <video controls>
+                    <source src="videos/transcriber.mp4" type="video/mp4">
+                </video>
+                <img src="images/background.png" />
+                <p></p>
+                <video controls>
+                    <source src="videos/transcriber.mp4" type="video/mp4">
+                </video>
+                <img src="images/background.png" />
+                <p></p>
+                <video controls>
+                    <source src="videos/transcriber.mp4" type="video/mp4">
+                </video>
+                <img src="images/background.png" />
+                <p></p>
+                <video controls>
+                    <source src="videos/transcriber.mp4" type="video/mp4">
+                </video>
+
+                <p></p>
+            </div>
+            <footer>
+                <div id="footerInner" class="footerInner">
+                    <p id="bottom">
+                        Author: Matthew Hill <br><br>
+                        <a href="mailto:mhill13g@gmail.com">mhill13g@gmail.com</a> <br><br>
+                        123456789101112131415161718192021222324252627282930abcdefghijklmnopqrstuvwxyz123456789101112131415161718192021222324252627282930abcdefghijklmnopqrstuvwxyz123456789101112131415161718192021222324252627282930abcdefghijklmnopqrstuvwxyz
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Format for H=1056px and W=1500px
+
+        window.onresize = quickTransition;
+
+        // Open side, smaller, close side
+        var navWidth = 0;
+        function iconTransition(x) {
+            document.documentElement.style.setProperty('--transSpeed', '.5s');
+            x.classList.toggle("change");
+            if (navWidth) navWidth = 0;
+            else navWidth = 15;
+
+            navTransition();
+        }
+
+        function navTransition() {
+            document.documentElement.style.setProperty('--transSpeed', '.5s');
+            sidePanelMove();
+            moveBackground();
+        }
+
+        function sidePanelMove() {
+            document.getElementById("mySidenav").style.width = navWidth + "vw";
+            document.getElementById("background").style.marginLeft = navWidth + "vw";
+            document.getElementById("background").style.width = (100 - navWidth) + "vw";
+            document.getElementById("content").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
+            document.getElementById("footerInner").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
+            document.getElementById("leftCol").style.marginLeft = (0.7 * navWidth) + "vw";
+        }
+
+        function quickTransition() {
+            document.querySelector(":root").style.setProperty('--transSpeed', '0s');
+            sidePanelMove();
+            moveBackground();
+        }
+
+        function iconHover(x) {
+            document.documentElement.style.setProperty('--transSpeed', '.5s');
+            if (navWidth) {
+                if (x.classList.contains("blue")) x.classList.remove("blue");
+                else x.classList.toggle("white");
+            }
+            else {
+                if (x.classList.contains("white")) x.classList.remove("white");
+                else x.classList.toggle("blue");
+            }
+        }
+
+        function moveBackground() {
+            var img = new Image();
+            img.src = getComputedStyle(document.getElementById("background")).getPropertyValue("background-image").slice(4, -1).replace(/"/g, "");
+            var imgWidth = img.width;
+            var imgHeight = img.height;
+
+            var main = document.getElementById("main");
+            var mainHeight = main.offsetHeight;
+            var mainWidth = window.innerWidth * ((100 - navWidth) / 100);
+
+            var actualImgHeight = imgHeight * mainWidth / imgWidth;
+
+            var txtHeight = document.getElementById("main").scrollHeight;
+
+            var scrollH = main.scrollTop;
+            var speed = (actualImgHeight - mainHeight) / (txtHeight - mainHeight);
+            var bgTop = scrollH * speed;
+
+            document.documentElement.style.setProperty('--transSpeed', '0s');
+            document.getElementById("background").style.height = actualImgHeight + "px";
+            document.getElementById("background").style.top = "-" + bgTop + "px";
+        }
+
+
+        /*
+        TODO 
+            Make dimensions proportional and stable - set max and min and make sure every component works with each other
+            Open sidemenu then zoom fucks things up
+            Create different backdrops / layouts for different employers - different usernames go to different sites?
+        */
+
+    </script>
+</body>
+
+</html>

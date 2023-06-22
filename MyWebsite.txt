@@ -1,0 +1,30 @@
+My personal website ideas:
+
+Display CV fashionably
+Links to little projects
+Youtube, email etc.
+Gallery?
+Articles or books I find interesting (fractals lol)
+
+
+Basic features:
+Scrollable - background scrolls slower than text
+Gallery 
+Width does not change
+Needs a url - http://www.matthewhill.com
+Sidebar needs to take whole page for smaller screens
+
+Best atm:
+http://www.mhillpage.co.uk - domain.com $7 a year
+
+
+Visuals:
+Black background
+White text - soft font to start, but spice it up as it goes along
+Funky scroll bar, rather than standard google
+Three line side panel on top left
+First page is NAME with some details or phrase or description about website etc.
+Fun little logo looking somewhere between knobbish and dull
+
+
+Using bootstrap:
