@@ -81,31 +81,39 @@
     </div>
 
     <script>
-        // Format for H=1056px and W=1500px
-
+        // On resize, instantly move the sidenav and background appropriately for the screen
         window.onresize = quickTransition;
 
-        // Open side, smaller, close side
+        // Variable to store the width of the sidenav in viewpoint width (vw)
         var navWidth = 0;
+
+        // Toggle the hamburger icon, the sidenav appearance, and adjust the background's position and size
         function iconTransition(x) {
+            // Set all transitions to be smooth
             document.getElementById("mySidenav").style.transitionDuration = "var(--transSpeed)"
             document.getElementById("background").style.transitionDuration = "var(--transSpeed)"
 
+            // Toggle between hamburger and cross icon
             x.classList.toggle("change");
             if (navWidth) navWidth = 0;
             else navWidth = 15;
 
+            // Move sizenav and background
             sidePanelMove();
             moveBackground();
         }
 
+        // Instantly setup the backgruond and, if not for scrolling, the sidenav
+        // Called when scrolling, window resize, or window onload
         function quickTransition(isScroll) {
+            // Set all transitions to be instant
             document.getElementById("mySidenav").style.transitionDuration = "0s"
             document.getElementById("background").style.transitionDuration = "0s"
             if (!isScroll) sidePanelMove();
             moveBackground();
         }
 
+        // Toggle the sidenav to its new navWidth, and adjust all other object accordingly
         function sidePanelMove() {
             document.getElementById("mySidenav").style.width = navWidth + "vw";
             document.getElementById("background").style.left = navWidth + "vw";
@@ -115,8 +123,7 @@
             document.getElementById("leftCol").style.marginLeft = (0.7 * navWidth) + "vw";
         }
 
-
-
+        // Toggle the color of the hamburger / cross icon when hovered over
         function iconHover(x) {
             if (navWidth) {
                 if (x.classList.contains("blue")) x.classList.remove("blue");
@@ -150,14 +157,6 @@
             document.getElementById("background").style.width = (100 - navWidth) + "vw";
             document.getElementById("background").style.top = "-" + bgTop + "px";
         }
-
-
-        /*
-        TODO 
-            Make dimensions proportional and stable - set max and min and make sure every component works with each other
-            Open sidemenu then zoom fucks things up
-            Create different backdrops / layouts for different employers - different usernames go to different sites?
-        */
 
     </script>
 </body>
