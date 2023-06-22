@@ -67,7 +67,7 @@ img {
     overflow-x: hidden;
     overflow-y: visible;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: -100;
     transition: var(--transSpeed);
 }
@@ -78,14 +78,14 @@ img {
 }
 
 #background {
-    width: 100%;
+    width: 100vw;
     height: 500vh;
     background-image: url("images/space.png");
     background-size: contain;
     background-repeat: no-repeat;
     overflow-y: visible;
     overflow-x: hidden;
-    top: 0;
+    top: 0px;
     left: 0;
     position: fixed;
     z-index: -2;
