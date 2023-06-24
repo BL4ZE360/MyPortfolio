@@ -4,10 +4,12 @@
     --sidebar-hover: white;
     --hamburger-hover: #82aedd;
     --transSpeed: 0.5s;
+    --textColor: rgb(250, 250, 250);
 }
 
 * {
     padding: 0;
+    color: var(--textColor);
 }
 
 html,
@@ -124,7 +126,7 @@ img {
 .para {
     width: 100%;
     height: 60vh;
-    font-size: min(4vw, 3vh);
+    font-size: min(2.5vw, 3.5vh);
     display: inline-block;
     position: relative;
 }
@@ -151,11 +153,12 @@ img {
 .secImg {
     top: -50%;
     height: 100%;
+    align-items: center;
 }
 
 img {
-    height: 100%;
     object-fit: contain;
+    height: 100%;
 }
 
 
@@ -175,7 +178,32 @@ footer {
     width: 82vw;
     margin-left: 9vw;
     transition: var(--transSpeed);
-    font-size: min(4vw, 3vh);
+    font-size: min(2vw, 2.8vh);
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 15vw;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link.com {
+    color: var(--textColor);
+}
+
+a:active {
+    color: var(--textColor);
+}
+
+a:visited {
+    color: var(--textColor);
+}
+
+a:hover {
+    color: var(--textColor);
 }
 
 .sidenav {
@@ -189,6 +217,7 @@ footer {
     overflow-x: hidden;
     padding-top: 3.5vh;
     transition: var(--transSpeed);
+    white-space: nowrap;
 }
 
 /* The navigation menu links */
