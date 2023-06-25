@@ -11,10 +11,10 @@
 <body onload="quickTransition(false)">
     <div id="mySidenav" class="sidenav">
         <a href="#">About Me</a>
-        <a href="www.linkedin.com/in/matthew-hill-9b56a5197">LinkedIn</a>
-        <a href="https://github.com/BL4ZE360">GitHub</a>
         <a href="#">Assisted Bridge</a>
         <a href="#">Mento</a>
+        <a href="www.linkedin.com/in/matthew-hill-9b56a5197">LinkedIn</a>
+        <a href="https://github.com/BL4ZE360">GitHub</a>
     </div>
     <div id="leftCol">
         <div class="iconContainer" onclick="iconTransition(this)" onmouseenter="iconHover(this)" onmouseleave="iconHover(this)">
@@ -43,6 +43,7 @@
                             <div class="secImg">
                                 <img style="width:70%;" src="images/me.png" />
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -202,6 +203,7 @@
         // Records the pixel location of the END of each section
         var partHeights = []
         function updatePartHeights() {
+            console.log("Parts before", JSON.parse(JSON.stringify(partHeights)))
             if (partHeights.length == 0) {
                 partHeights = [0]
                 for (let i = 1; i < 10; i++) {
@@ -214,12 +216,15 @@
             for (let i = 1; i < partHeights.length; i++) {
                 partHeights[i] = document.getElementById("part" + i).offsetHeight + partHeights[i - 1];
             }
+            console.log("Parts after", JSON.parse(JSON.stringify(partHeights)))
             textFading();
         }
 
         function textFading() {
             // Get the location of the center of the screen
             let centerHeight = document.getElementById("main").scrollTop + screen.height / 2
+
+            console.log("Current height", centerHeight)
 
             // Set fade of each section based on scroll position
             for (let i = 1; i < partHeights.length; i++) {
