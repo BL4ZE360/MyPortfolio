@@ -10,10 +10,11 @@
 
 <body onload="quickTransition(false)">
     <div id="mySidenav" class="sidenav">
-        <a href="#">About Me</a>
-        <a href="#">Assisted Bridge</a>
-        <a href="#">Mento</a>
-        <a href="www.linkedin.com/in/matthew-hill-9b56a5197">LinkedIn</a>
+        <div class="page-link" onclick="swapPages('home')" href="home">Home</div>
+        <div class="page-link" onclick="swapPages('about')" href="about">About Me</div>
+        <div class="page-link" onclick="swapPages('bridge')" href="bridge">Assisted Bridge</div>
+        <div class="page-link" onclick="swapPages('mento')" href="mento">Mento</div>
+        <a href="https://linkedin.com/in/matthew-hill-9b56a5197">LinkedIn</a>
         <a href="https://github.com/BL4ZE360">GitHub</a>
     </div>
     <div id="leftCol">
@@ -28,7 +29,7 @@
     <div id="main" class="main" onscroll="quickTransition(true); textFading()">
         <div id="background"></div>
         <div id="text" class="text">
-            <div id="content" class="content">
+            <div id="home" class="content">
                 <div id="title">MyPortfolio - Matthew Hill</div>
                 <div class="section" id="part1">
                     <div class="subtitle">About Me</div>
@@ -104,6 +105,66 @@
                     <br><br>
                 </div>
             </div>
+            <div id="about" class="content" style="display:none;">
+                <div id="title">About Me</div>
+                <div class="section" id="part1">
+                    <div class="subtitle">About Me</div>
+                    <hr size="6px" color="#6ca7e0">
+                    <div class="para">
+                        <div class="textContainer">
+                            <div class="innerText">
+                                I am a soon-to-be graduate in computer sceience from the University of Warwick. I currently live in Leamington Spa but will be permanently moving to Papworth Everard from August. During my course, I have quickly learnt and harnessed a variety of programming languages, such as Python, Java, C, JavaScript, HTML and CSS. I enjoy solving problems and utilising various software engineering methodologies to accomplish so. I am looking forward to putting my technical talents and creativity to use in a real-world context and developing as a professional in the fast-paced world of technology.
+                            </div>
+                        </div>
+                        <div class="imgContainer">
+                            <div class="secImg">
+                                <img style="width:70%;" src="images/me.png" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="bridge" class="content" style="display:none;">
+                <div id="title">BRIDGE</div>
+                <div class="section" id="part1">
+                    <div class="subtitle">About Me</div>
+                    <hr size="6px" color="#6ca7e0">
+                    <div class="para">
+                        <div class="textContainer">
+                            <div class="innerText">
+                                I am a soon-to-be graduate in computer sceience from the University of Warwick. I currently live in Leamington Spa but will be permanently moving to Papworth Everard from August. During my course, I have quickly learnt and harnessed a variety of programming languages, such as Python, Java, C, JavaScript, HTML and CSS. I enjoy solving problems and utilising various software engineering methodologies to accomplish so. I am looking forward to putting my technical talents and creativity to use in a real-world context and developing as a professional in the fast-paced world of technology.
+                            </div>
+                        </div>
+                        <div class="imgContainer">
+                            <div class="secImg">
+                                <img style="width:70%;" src="images/me.png" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mento" class="content" style="display:none;">
+                <div id="title">MENTO</div>
+                <div class="section" id="part1">
+                    <div class="subtitle">About Me</div>
+                    <hr size="6px" color="#6ca7e0">
+                    <div class="para">
+                        <div class="textContainer">
+                            <div class="innerText">
+                                I am a soon-to-be graduate in computer sceience from the University of Warwick. I currently live in Leamington Spa but will be permanently moving to Papworth Everard from August. During my course, I have quickly learnt and harnessed a variety of programming languages, such as Python, Java, C, JavaScript, HTML and CSS. I enjoy solving problems and utilising various software engineering methodologies to accomplish so. I am looking forward to putting my technical talents and creativity to use in a real-world context and developing as a professional in the fast-paced world of technology.
+                            </div>
+                        </div>
+                        <div class="imgContainer">
+                            <div class="secImg">
+                                <img style="width:70%;" src="images/me.png" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             <footer>
                 <div id="footerInner" class="footerInner">
                     <div style="tab-size: 8;">
@@ -128,6 +189,7 @@
 
         // Variable to store the width of the sidenav in viewpoint width (vw)
         var navWidth = 0;
+        var currPage = "home"
 
         // Toggle the hamburger icon, the sidenav appearance, and adjust the background's position and size
         function iconTransition(x) {
@@ -160,7 +222,7 @@
             document.getElementById("mySidenav").style.width = navWidth + "vw";
             document.getElementById("background").style.left = navWidth + "vw";
             document.getElementById("background").style.width = (100 - navWidth) + "vw";
-            document.getElementById("content").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
+            document.getElementById(currPage).style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
             document.getElementById("footerInner").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
             document.getElementById("leftCol").style.marginLeft = (0.7 * navWidth) + "vw";
         }
@@ -203,18 +265,17 @@
         // Records the pixel location of the END of each section
         var partHeights = []
         function updatePartHeights() {
+            let children = document.getElementById(currPage).children
             console.log("Parts before", JSON.parse(JSON.stringify(partHeights)))
             if (partHeights.length == 0) {
                 partHeights = [0]
-                for (let i = 1; i < 10; i++) {
-                    let elem = document.getElementById("part" + i)
-                    if (!elem) break
+                for (let i = 1; i < children.length; i++) {
                     partHeights.push(0)
                 }
             }
-            partHeights[0] = document.getElementById("title").offsetHeight;
+            partHeights[0] = children[0].offsetHeight;
             for (let i = 1; i < partHeights.length; i++) {
-                partHeights[i] = document.getElementById("part" + i).offsetHeight + partHeights[i - 1];
+                partHeights[i] = children[i].offsetHeight + partHeights[i - 1];
             }
             console.log("Parts after", JSON.parse(JSON.stringify(partHeights)))
             textFading();
@@ -225,6 +286,9 @@
             let centerHeight = document.getElementById("main").scrollTop + screen.height / 2
 
             console.log("Current height", centerHeight)
+
+            let children = document.getElementById(currPage).children
+            console.log("Children", children)
 
             // Set fade of each section based on scroll position
             for (let i = 1; i < partHeights.length; i++) {
@@ -245,9 +309,19 @@
                     opacity = -Math.pow(x, 2) + 2 * x
                 }
 
-                document.getElementById("part" + i).style.opacity = opacity
+                children[i].style.opacity = opacity
             }
         }
+
+        function swapPages(id) {
+            document.getElementById("main").scrollTo(0, 0)
+            document.querySelectorAll(".content").forEach(a => a.style.display = "none");
+            document.getElementById(id).style.display = "";
+            currPage = id
+            partHeights = []
+            updatePartHeights()
+        }
+
 
     </script>
 </body>

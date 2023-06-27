@@ -231,8 +231,25 @@ a:hover {
     transition: var(--transSpeed);
 }
 
+.page-link {
+    z-index: 3;
+    padding: 0.5vw 0.5vw 0.5vw 1.5vw;
+    text-decoration: none;
+    font-size: 1.5vw;
+    color: var(--sidebar-front);
+    display: block;
+    transition: var(--transSpeed);
+    cursor: pointer;
+}
+
+
+
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
+    color: var(--sidebar-hover);
+}
+
+.page-link:hover {
     color: var(--sidebar-hover);
 }
 
