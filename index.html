@@ -12,7 +12,7 @@
     <div id="mySidenav" class="sidenav">
         <div class="page-link" onclick="swapPages('home')" href="home">Home</div>
         <div class="page-link" onclick="swapPages('about')" href="about">About Me</div>
-        <div class="page-link" onclick="swapPages('bridge')" href="bridge">Assisted Bridge</div>
+        <!-- <div class="page-link" onclick="swapPages('bridge')" href="bridge">Assisted Bridge</div> -->
         <div class="page-link" onclick="swapPages('mento')" href="mento">Mento</div>
         <a href="https://linkedin.com/in/matthew-hill-9b56a5197">LinkedIn</a>
         <a href="https://github.com/BL4ZE360">GitHub</a>
@@ -214,8 +214,8 @@
                 </div>
             </div>
             <div id="bridge" class="content" style="display:none;">
-                <div id="title">BRIDGE</div>
-                <div class="section" id="part1">
+                <div id="title">Assisted Bridge</div>
+                <div class="section">
                     <div class="subtitle">TBC in 3 days</div>
                     <hr size="6px" color="#6ca7e0">
                     <div class="para">
@@ -234,23 +234,55 @@
                 </div>
             </div>
             <div id="mento" class="content" style="display:none;">
-                <div id="title">MENTO</div>
-                <div class="section" id="part1">
-                    <div class="subtitle">TBC in 3 days</div>
-                    <hr size="6px" color="#6ca7e0">
+                <div id="title">Mento</div>
+                <div class="section">
+                    <div class="para">
+                        <div class="imgContainer">
+                            <div class="secImg">
+                                <img style="width:70%;" src="images/mento_logo.png" />
+                            </div>
+                        </div>
+                        <div class="textContainer">
+                            <div class="innerText">
+                                Mento is a web application that was developed as a group prohect for a module in my second year of university that was run in collaboration with Deutsche Bank. The project brief was to develop a solution that facilitates the employee mentoring program. We were given a specification for the minimum requirements and were given freedom for the app's development, while discussing any additions with the client. We decided to develop the solution as a web application as it would allow for easy access for the Deutsche Bank employees.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="para">
+                        <div style="width: 100%" class="textContainer">
+                            <div class="innerText">
+                                My role within the team focussed on the project documentation and assisting with pair programming for both the development and testing aspects. Additionally, I helped the project manager with their delegation amongst the team. Our team of 7 had a range of experience in software engineering. Therefore, we opted for a blend of Plan-Driven and Agile development. This was chosen such that the final product satisfied the specification, while the team maintained constant communication. Additionally, we were required to submit the application along with the following documents: Requirements Analysis, Design Plan, Final Report, of which we scored 74%.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
                     <div class="para">
                         <div class="textContainer">
                             <div class="innerText">
-                                Work in Progress
+                                The app consisted of a login screen, a mentor / mentee pairing system, a chat function, and a group session feature. The users of the app's data such as login details were stored in an SQL database. The backend and frontend of the project primarily relies of Java. Additionally, it uses Spring Boot, Maven and Vaadin to simplify the development, manage dependencies and help provide a modern interface.
                             </div>
                         </div>
                         <div class="imgContainer">
                             <div class="secImg">
-                                <img style="width:70%;" src="images/me.png" />
+                                <img style="width:70%;" src="images/mento.png" />
                             </div>
-
                         </div>
                     </div>
+                </div>
+                <div class="section">
+                    <div class="subtitle"></div>
+                    <div class="para">
+                        <div style="width: 100%" class="textContainer">
+                            <div class="innerText">
+                                Overall our project ranked second out of 51 teams, with Deutsch Bank's feedback complimenting: <br><br>
+                                "Excellent showcasing of a robust admin system, helping to show how the product may be managed once it is installed. Key considerations were discussed, including matching adjustments based on feedback and hard limits to prevent overloading of mentors. The UI was clean, and the presentation of the calendar style was mentioned in particular as well done."
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subtitle"></div>
                 </div>
             </div>
             <footer>
@@ -310,7 +342,10 @@
             document.getElementById("mySidenav").style.width = navWidth + "vw";
             document.getElementById("background").style.left = navWidth + "vw";
             document.getElementById("background").style.width = (100 - navWidth) + "vw";
-            document.getElementById(currPage).style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
+            document.getElementById("home").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
+            document.getElementById("about").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
+            document.getElementById("bridge").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
+            document.getElementById("mento").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
             document.getElementById("footerInner").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
             document.getElementById("leftCol").style.marginLeft = (0.7 * navWidth) + "vw";
         }
@@ -405,6 +440,7 @@
             document.querySelectorAll(".content").forEach(a => a.style.display = "none");
             document.getElementById(id).style.display = "";
             currPage = id
+            moveBackground()
             partHeights = []
             updatePartHeights()
         }
