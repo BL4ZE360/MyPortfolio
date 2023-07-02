@@ -12,7 +12,7 @@
     <div id="mySidenav" class="sidenav">
         <div class="page-link" onclick="swapPages('home')" href="home">Home</div>
         <div class="page-link" onclick="swapPages('about')" href="about">About Me</div>
-        <!-- <div class="page-link" onclick="swapPages('bridge')" href="bridge">Assisted Bridge</div> -->
+        <div class="page-link" onclick="swapPages('bridge')" href="bridge">Assisted Bridge</div>
         <div class="page-link" onclick="swapPages('mento')" href="mento">Mento</div>
         <a href="https://linkedin.com/in/matthew-hill-9b56a5197">LinkedIn</a>
         <a href="https://github.com/BL4ZE360">GitHub</a>
@@ -144,7 +144,7 @@
                 <div class="section">
                     <div class="subtitle">Education</div>
                     <hr size="6px" color="#6ca7e0">
-                    <div style="height:40vh;" class="para">
+                    <div class="para height_45">
                         <div style="width:30%" class="textContainer">
                             <div class="innerText">
                                 2020-Present <br><br>
@@ -169,7 +169,7 @@
                 <div class="section">
                     <div class="subtitle">Work History</div>
                     <hr size="6px" color="#6ca7e0">
-                    <div style="height:73vh;" class="para">
+                    <div class="para height_75">
                         <div style="width:48%; height:20vh;" class="textContainer">
                             <div class="innerText">
                                 Oct 2022 - Mar 2023 <br><br>
@@ -199,7 +199,7 @@
                 <div class="section">
                     <div class="subtitle">Summary</div>
                     <hr size="6px" color="#6ca7e0">
-                    <div style="height: 75vh;" class="para">
+                    <div class="para height_75">
                         <div class="textContainer">
                             <div class="innerText">
                                 I am a soon-to-be graduate in computer science from the University of Warwick, predicted a first. During my course, I have quickly learnt and harnessed a variety of programming languages. I enjoy solving problems and utilising various software engineering methodologies to accomplish so. I'm driven and passionate with an aptitude for problem-solving, deploying efficient solutions, and adapting to new technologies. I have delivered multiple products from conception to production and have experience working both independently and as part of a team. I am looking forward to putting my technical talents and creativity to use in a real-world context and developing as a professional in the fast-paced world of technology.
@@ -232,20 +232,19 @@
                     <div class="para">
                         <div style="width: 100%" class="textContainer">
                             <div class="innerText">
-                                What the app is and its motive
-                                For my dissertation, I created an application that would help users to learn and master the card game Bridge. The idea was to provide an in-game assistant that would recommend moves to make that would optimise the player's outcome.
+                                For my dissertation, I created an application that would help users to learn and master the card game Bridge. The idea was to provide an in-game assistant that would recommend moves for the user to make that would optimise their outcome.
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="section">
-                    <div class="para">
-                        <div class="textContainer">
+                    <div class="para height_30">
+                        <div style="width: 75%;" class="textContainer">
                             <div class="innerText">
-                                Methodology, planning, documentation
+                                I chose a blend between the Waterfall model and an Agile methodology to allow for stable requirements, but with cycles of fine-tuning the app. The dissertation was formed from four primary components: a Requirements document, a Progress Report, a presentation, and the Final Report. These ensured the project maintained a steady progress to maintain a steady progress throughout the project.
                             </div>
                         </div>
-                        <div class="imgContainer">
+                        <div style="width: 20%;" class="imgContainer">
                             <div class="secImg">
                                 <img src="images/bulb.png" />
                             </div>
@@ -257,20 +256,40 @@
                     <div class="para">
                         <div style="width: 100%" class="textContainer">
                             <div class="innerText">
-                                Coding aspect - structure and languages
+                                The app's key design features were thoroughly planned, and were shortly followed by the base app's implementation. This consisted of a simple setup to play Bridge using JavaScript and HTML. This allowed the user to bid during the bidding phase of the game, and to play cards during the playing phase. For both of these actions, clicking on the lightbulb icon highlight the move for the user to make using a simple box-shadow effect.
+                                <br><br>
+                                The assistant's decision process to chose a move is based off the same process that the other 3 AI players use - neural networks. This project uses three different networks to take information from the user's hand and the game so far and creates a probility distribution across possible moves to make, all using Python. To simplify the inputted information, heuristics are used in JavaScript to map the user's hand into its important factors (HCPs).
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="section">
-                    <div class="para">
+                    <div class="para height_30">
                         <div style="width: 100%" class="textContainer">
                             <div class="innerText">
-                                How it ended up - any improvements?
+                                The product was tested through various forms: unit testing, system testing, UI testing, user acceptance testing, and AI testing. The results of these guided the direction of the project and discovered any faults to fix.
+                                <br><br>
+                                The app was deployed as a single folder for user simplicity, where they would launch the app like any other desktop application. I used Electron Builder to automate the process, providing a variety of forms to distribute the package.
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="section">
+                    <div class="para height_75">
+                        <div style="width: 100%" class="textContainer">
+                            <div class="innerText">
+                                Overall, this project was successful, in that user feedback was very positive and some even began playing Bridge frequently. Additionally, the project maintained a steady workflow, implying a successful methodology.
+                                <br><br>
+                                However, some additional features were not implemented due to time constraints, such as an adjustable difficulty level. These features would've broadened the user's experience, but ultimately did not affect their ability to learn Bridge.
+                                <br><br>
+                                I thoroughly enjoyed this project, as I could combine my enjoyment for Bridge with the skills I've learnt throughout my course.
+                                How it ended up - any improvements?
+                                What I really enjoyed about it all, what I've learnt / feel accomplished in
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
             </div>
 
 
