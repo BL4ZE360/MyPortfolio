@@ -14,6 +14,7 @@
         <div class="page-link" onclick="swapPages('about')" href="about">About Me</div>
         <div class="page-link" onclick="swapPages('bridge')" href="bridge">Assisted Bridge</div>
         <div class="page-link" onclick="swapPages('mento')" href="mento">Mento</div>
+        <div class="page-link" onclick="swapPages('chess')" href="chess">Chess</div>
         <a href="https://linkedin.com/in/matthew-hill-9b56a5197">LinkedIn</a>
         <a href="https://github.com/BL4ZE360">GitHub</a>
     </div>
@@ -37,7 +38,7 @@
                     <div class="para">
                         <div class="textContainer">
                             <div class="innerText">
-                                I am a soon-to-be graduate in computer science from the University of Warwick. I currently live in Leamington Spa but will be permanently moving to Papworth Everard from August. During my course, I have quickly learnt and harnessed a variety of programming languages, such as Python, Java, C, JavaScript, HTML and CSS. I enjoy solving problems and utilising various software engineering methodologies to accomplish so. I am looking forward to putting my technical talents and creativity to use in a real-world context and developing as a professional in the fast-paced world of technology.
+                                I graduated from the University of Warwick in 2023 with a 2:1 in Computer Science. I currently live in Papworth Everard. During my course, I have quickly learnt and harnessed a variety of programming languages and tools, such as Python, JavaScript, React, WPF, SpringBoot, C#, C, Java, HTML and CSS. I enjoy solving problems and utilising various software engineering methodologies to accomplish so. I am looking forward to putting my technical talents and creativity to use in a real-world context and developing as a professional in the fast-paced world of technology.
                             </div>
                         </div>
                         <div class="imgContainer">
@@ -88,17 +89,33 @@
                     </div>
                 </div>
                 <div class="section">
-                    <div class="subtitle">This portfolio</div>
+                    <div class="subtitle">Chess</div>
                     <hr size="6px" color="#6ca7e0">
                     <div class="para">
                         <div class="imgContainer">
                             <div class="secImg">
-                                <img style="width:90%" src="images/portf.png" />
+                                <img style="width:70%;" src="images/chess.png" />
                             </div>
                         </div>
                         <div class="textContainer">
                             <div class="innerText">
+                                In addition to the previous projects, I wanted to expand my computer skills and knowledge by learning C# and WPF, as these are fairly useful tools to have. I chose to build a chess application as C# works well with gaming, and WPF opens the game up to become complex with an appealing UI. After finishing the application, I also decided to increase my experience in React.js by mimicking the app into JavaScript.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="subtitle">This portfolio</div>
+                    <hr size="6px" color="#6ca7e0">
+                    <div class="para">
+                        <div class="textContainer">
+                            <div class="innerText">
                                 This portfolio uses a simple blend of HTML, CSS and JavaScript. The aim of this project is to both neatly present myself to employers, and to build on my skills in these languages. Additionally, it allows me to constantly build on a project, safely adding new features over time.
+                            </div>
+                        </div>
+                        <div class="imgContainer">
+                            <div class="secImg">
+                                <img style="width:90%" src="images/portf.png" />
                             </div>
                         </div>
                     </div>
@@ -115,11 +132,10 @@
                             <div class="innerText">
                                 <div class="list-heading">Technological Skills</div>
                                 <ul>
-                                    <li>Python</li>
-                                    <li>Java</li>
-                                    <li>HTML & CSS</li>
-                                    <li>JavaScript</li>
-                                    <li>MySQL / PostgreSQL</li>
+                                    <li>Python, Java</li>
+                                    <li>JavaScript, HTML, CSS</li>
+                                    <li>MySQL, PostgreSQL</li>
+                                    <li>SpringBoot, </li>
                                     <li>C</li>
                                     <li>Tensorflow & Keras</li>
                                     <li>Neural Networks, Reinforced Learning, Bayesian Belief Networks</li>
@@ -200,7 +216,7 @@
                     <div class="para height_75">
                         <div class="textContainer">
                             <div class="innerText">
-                                I am a soon-to-be graduate in Computer Science from the University of Warwick, predicted a first. During my course, I have quickly learnt and harnessed a variety of programming languages. I enjoy solving problems and utilising various software engineering methodologies to accomplish so. I'm driven and passionate with an aptitude for problem-solving, deploying efficient solutions, and adapting to new technologies. I have delivered multiple products from conception to production and have experience working both independently and as part of a team. I am looking forward to working in the field of Software Engineering.
+                                I graduated with a 2:1 in Computer Science from the University of Warwick in 2023. During my course, I have quickly learnt and harnessed a variety of programming languages. I enjoy solving problems and utilising various software engineering methodologies to accomplish so. I'm driven and passionate with an aptitude for problem-solving, deploying efficient solutions, and adapting to new technologies. I have delivered multiple products from conception to production and have experience working both independently and as part of a team. I am looking forward to working in the field of Software Engineering.
                             </div>
                         </div>
                         <div class="imgContainer">
@@ -345,6 +361,74 @@
                     <div class="subtitle"></div>
                 </div>
             </div>
+
+
+
+            <div id="chess" class="content" style="display:none;">
+                <div id="title">Chess</div>
+                <div class="section">
+                    <div class="para">
+                        <div style="width:100%" class="textContainer">
+                            <div class="innerText">
+                                This project is an application to play Chess, allowing me to learn new languages and frameworks. Initially, the app was created using C# through WPF (a form of .NET framework). Shortly after finalising this version of the app, I then re-wrote it into JavaScript in order to become more familiar with the React.js framework.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="para">
+                        <div class="textContainer">
+                            <div class="innerText">
+                                The C#-side of the project consists of a xaml file which initialises the Chess grid onscreen and a cs file that generates the board, pieces, and their movements. There are also two custom classes: ChessBoard and ChessPiece, used to keep track of the game and determine legal chess moves. Specifically, ChessPiece is an abstract class that is used for each ChessPieceType as each piece type has a different movement across the board.
+                            </div>
+                        </div>
+                        <div class="imgContainer">
+                            <div class="secImg">
+                                <img style="width:70%;" src="images/chess_files.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="para">
+                        <div style="width:25%" class="imgContainer">
+                            <div class="secImg">
+                                <img style="width:100%;" src="images/chess.png" />
+                            </div>
+                        </div>
+                        <div style="width:45%" class="textContainer">
+                            <div style="width: 80%" class="innerText">
+                                When running the app, the game appears in a pop-up window. When clicking on a valid piece, its tile changes colour to blue, and the possible spaces it can move to are highlighted in green. This colouring is a common approach for board games as it guides the user's decision per turn. The user is notified when in check, and the game ends when in checkmate or stalemate.
+                            </div>
+                        </div>
+                        <div style="width:25%" class="imgContainer">
+                            <div class="secImg">
+                                <img style="width:100%;" src="images/chess2.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="subtitle"></div>
+                    <div class="para">
+                        <div style="width: 100%" class="textContainer">
+                            <div class="innerText">
+                                React context
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="subtitle"></div>
+                    <div class="para">
+                        <div style="width: 100%" class="textContainer">
+                            <div class="innerText">
+                                Overall I consider this project a success as I feel more comfortable with C#, WPF and React.js. The app itself can indeed be improved upon in terms of gameplay smoothness, recording a user's history, and even creating AI to play against. However, the aim of this project is not to create the best app, but to learn new computing features.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <footer>
                 <div id="footerInner" class="footerInner">
                     <div style="tab-size: 8;">
@@ -406,6 +490,7 @@
             document.getElementById("about").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
             document.getElementById("bridge").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
             document.getElementById("mento").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
+            document.getElementById("chess").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
             document.getElementById("footerInner").style.marginLeft = (9 + (0.5 * navWidth)) + "vw";
             document.getElementById("leftCol").style.marginLeft = (0.7 * navWidth) + "vw";
         }
